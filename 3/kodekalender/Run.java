@@ -12,6 +12,7 @@ public class Run {
 
   public static void main(String[] args) {
 
+    long startTime = System.currentTimeMillis();
     int counter = 1;
     int[] primeIndexes = new int[24];
     primeIndexes[23] = 1;
@@ -30,6 +31,8 @@ public class Run {
     }
 
     System.out.println(counter);
+    long endTime = System.currentTimeMillis();
+    System.out.println((endTime - startTime));
   }
 
   public static int[] shiftarray(int[] array) {
