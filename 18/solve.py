@@ -21,7 +21,7 @@ def isDraw(inputActionsString):
 
 def hasSpecificWinner(string):
     sortedString = ''.join(sorted(string))
-    return (sortedString == "PPS" or sortedString == "PRR" or sortedString == "RSS")
+    return sortedString in ["PPS", "PRR", "RSS"]
 
 
 def getSpecificWinner(string):
@@ -42,17 +42,9 @@ def getTwoManWinner(actionsInput, loser):
     if(isDraw(action)):
         return getTwoManWinner(actionsInput, loser)
 
-    if(action == "RS"):
+    if action in ["RS", "SP", "PR"]:
         winner = [1, 0]
-    elif(action == "SP"):
-        winner = [1, 0]
-    elif(action == "PR"):
-        winner = [1, 0]
-    elif(action == "SR"):
-        winner = [0, 1]
-    elif(action == "PS"):
-        winner = [0, 1]
-    elif(action == "RP"):
+    elif action in ["SR", "PS", "RP"]:
         winner = [0, 1]
 
     returnTupple = []
